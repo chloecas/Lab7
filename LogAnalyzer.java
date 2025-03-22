@@ -47,7 +47,7 @@ public class LogAnalyzer
     /**
      * Create an object to analyze hourly web accesses. Reads files created 
      * in log
-     */
+     
     public LogAnalyzer(String filename)
     { 
         // Create the array object to hold the hourly
@@ -55,6 +55,7 @@ public class LogAnalyzer
         hourCounts = new int[24];
 
     }
+    */
 
     /**
      * Analyze the hourly access data from the log file.
@@ -120,4 +121,33 @@ public class LogAnalyzer
         }
         return total;
     }
+    
+    //Question 15
+    /** 
+     * Returns the busiest hour according to data
+     */
+    public int busiestHour()
+    {
+        int max = hourCounts[0];
+        for(int index= 0; index< hourCounts.length; index++ ) {
+            if(hourCounts[index] > max)
+            max = hourCounts[index];
+        }
+        return max;
+    }
+    
+    //Question 16
+    /**
+     * Returns the least busy hour according to data
+     */
+    public int quiestestHour()
+    {
+        int min = hourCounts[0];
+        for(int index = 0; index < hourCounts.length; index++) {
+            if(hourCounts[index]<= min)
+            min = hourCounts[index];
+        }
+        return min;
+    }
+    
 }
